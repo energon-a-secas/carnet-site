@@ -1,6 +1,6 @@
 <div align="center">
 
-# TickBox
+# Carnet
 
 A to-do list that syncs to your own Puter account — no signup form, no backend, no API keys
 
@@ -20,7 +20,7 @@ A to-do list that syncs to your own Puter account — no signup form, no backend
 [badge-claude]:  https://img.shields.io/badge/Claude_Code-CC785C?style=for-the-badge&logo=anthropic&logoColor=white
 [badge-license]: https://img.shields.io/badge/license-MIT-404040?style=for-the-badge
 
-[url-site]:   https://tickbox.neorgon.com/
+[url-site]:   https://carnet.neorgon.com/
 [url-html]:   #
 [url-css]:    #
 [url-js]:     #
@@ -33,11 +33,11 @@ A to-do list that syncs to your own Puter account — no signup form, no backend
 
 ## Overview
 
-TickBox is a to-do list whose tasks follow you between browsers without you setting up an account with *this* site. Sign in with Puter and the list lives in your own cloud storage; skip signing in and it works exactly the same, just confined to the browser you are using.
+Carnet is a to-do list whose tasks follow you between browsers without you setting up an account with *this* site. Sign in with Puter and the list lives in your own cloud storage; skip signing in and it works exactly the same, just confined to the browser you are using.
 
 There is no server here to trust. The site is static files, and the only thing standing between the list and the cloud is your own Puter account — which means there is also no API key to leak, no database to run, and no per-user cost to the site owner.
 
-**Live:** tickbox.neorgon.com
+**Live:** carnet.neorgon.com
 
 ---
 
@@ -54,7 +54,7 @@ There is no server here to trust. The site is static files, and the only thing s
 
 ## How sync works
 
-The list is stored as a **single** key-value entry (`tickbox:tasks`) rather than one entry per task. A few thousand tasks sit far under Puter's 400 KB value ceiling, and one write per action keeps the list internally consistent — there is no half-applied batch to recover from.
+The list is stored as a **single** key-value entry (`carnet:tasks`) rather than one entry per task. A few thousand tasks sit far under Puter's 400 KB value ceiling, and one write per action keeps the list internally consistent — there is no half-applied batch to recover from.
 
 Each task carries `updatedAt`, and deletes set `deletedAt` instead of removing the record. On load, the cloud copy and the local copy are merged by id, keeping whichever version of a task was written most recently. Because a delete is a record rather than an absence, it wins over an older edit made elsewhere — the common failure mode of naive sync, where a task you deleted on your laptop reappears from your phone. Tombstones older than 30 days are pruned.
 
@@ -77,7 +77,7 @@ No build step, no `npm install`, no API keys.
 ## Architecture
 
 ```
-tickbox-site/
+carnet-site/
 ├── index.html          # Shell: header, auth sheet, compose form, list
 ├── css/
 │   └── style.css       # Tokens + app styles (header/footer kits vendored alongside)

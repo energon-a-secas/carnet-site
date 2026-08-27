@@ -1,8 +1,8 @@
-# CLAUDE.md: Tickbox
+# CLAUDE.md: Carnet
 
-TickBox: to-do list backed by the *visitor's* own Puter account (no backend, no API keys, user-pays). Signed out it is offline-first localStorage; signed in the list is one `puter.kv` entry that follows the user to any browser, and a sign-in adopts the anonymous list rather than discarding it. Sync merges per task by `updatedAt` with tombstoned deletes, so a delete on one device is not resurrected by a stale copy on another; header badge reports Local/Syncing/Synced/Sync failed honestly. Modular ES modules; every kv call is gated behind `isSignedIn()` because kv auto-auth opens a popup browsers block outside a gesture (tickbox.neorgon.com)
+Carnet: to-do list backed by the *visitor's* own Puter account (no backend, no API keys, user-pays). Signed out it is offline-first localStorage; signed in the list is one `puter.kv` entry that follows the user to any browser, and a sign-in adopts the anonymous list rather than discarding it. Sync merges per task by `updatedAt` with tombstoned deletes, so a delete on one device is not resurrected by a stale copy on another; header badge reports Local/Syncing/Synced/Sync failed honestly. Modular ES modules; every kv call is gated behind `isSignedIn()` because kv auto-auth opens a popup browsers block outside a gesture (carnet.neorgon.com)
 
-**Live:** tickbox.neorgon.com · **Port:** 8859
+**Live:** carnet.neorgon.com · **Port:** 8859
 
 ## Run
 
@@ -27,7 +27,7 @@ Vendored from `packages/neorgon-ui/`: never edit in place, run the sync script i
 
 ## Data
 
-- `localStorage['tickbox:tasks']`
+- `localStorage['carnet:tasks']`
 
 ## Conventions
 

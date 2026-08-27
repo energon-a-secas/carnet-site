@@ -12,8 +12,8 @@
 // block popups outside a user gesture, so every kv call here is gated behind
 // isSignedIn() — otherwise a page load while signed out fires a blocked popup.
 
-const LOCAL_KEY = 'tickbox:tasks';
-const KV_KEY = 'tickbox:tasks';
+const LOCAL_KEY = 'carnet:tasks';
+const KV_KEY = 'carnet:tasks';
 
 /** Tombstones older than this are dropped — long enough for any offline device. */
 const TOMBSTONE_TTL_MS = 30 * 24 * 60 * 60 * 1000;
