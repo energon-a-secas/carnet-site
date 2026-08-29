@@ -12,7 +12,7 @@ const EMPTY_COPY = {
 };
 
 const BADGE_COPY = {
-  local: { label: 'Local', title: 'Saved in this browser only — sign in to sync' },
+  local: { label: 'Local', title: 'Saved in this browser only: sign in to sync' },
   syncing: { label: 'Syncing…', title: 'Saving to your Puter account' },
   synced: { label: 'Synced', title: 'Saved to your Puter account' },
   error: { label: 'Sync failed', title: 'Saved locally, but the cloud write failed' },

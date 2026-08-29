@@ -163,7 +163,7 @@ function bindAuth() {
       panel.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
       render();
-      showToast('Signed in — list synced');
+      showToast('Signed in: list synced');
     } catch (err) {
       showAuthError(authErrorMessage(err));
       state.syncState = 'local';
@@ -184,7 +184,7 @@ function bindAuth() {
     panel.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
     render();
-    showToast('Signed out — list stays in this browser');
+    showToast('Signed out: list stays in this browser');
   });
 }
 
